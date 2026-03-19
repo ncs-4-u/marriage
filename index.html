@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#31332f",
+                        "on-primary-fixed-variant": "#67303f",
+                        "tertiary-dim": "#365671",
+                        "outline": "#7a7b76",
+                        "on-tertiary-fixed-variant": "#34536f",
+                        "on-error": "#fff7f6",
+                        "tertiary": "#43627e",
+                        "outline-variant": "#b2b2ad",
+                        "on-error-container": "#6e0a12",
+                        "surface-variant": "#e3e3dc",
+                        "on-secondary-fixed-variant": "#3c6355",
+                        "error-dim": "#67040d",
+                        "primary-container": "#f3a6b8",
+                        "inverse-on-surface": "#9e9d99",
+                        "surface-container": "#efeee9",
+                        "primary-dim": "#7c4151",
+                        "secondary-dim": "#335b4d",
+                        "surface-container-low": "#f5f4ef",
+                        "on-primary-fixed": "#421121",
+                        "on-primary": "#fff7f7",
+                        "on-secondary": "#e5fff2",
+                        "error": "#a83836",
+                        "surface-dim": "#dadad4",
+                        "inverse-primary": "#f3a6b8",
+                        "surface-tint": "#8a4c5d",
+                        "tertiary-fixed-dim": "#a7c7e7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#143751",
+                        "surface-container-highest": "#e3e3dc",
+                        "surface-container-high": "#e9e8e3",
+                        "on-secondary-container": "#32594b",
+                        "secondary-fixed": "#c0ecda",
+                        "tertiary-fixed": "#b5d5f6",
+                        "on-secondary-fixed": "#1e4639",
+                        "secondary-fixed-dim": "#b3decc",
+                        "surface": "#fbf9f5",
+                        "primary-fixed-dim": "#e499ab",
+                        "on-tertiary-container": "#2a4a65",
+                        "tertiary-container": "#b5d5f6",
+                        "secondary": "#3f6758",
+                        "on-primary-container": "#5d2737",
+                        "on-tertiary": "#f6f9ff",
+                        "error-container": "#fa746f",
+                        "secondary-container": "#c0ecda",
+                        "surface-bright": "#fbf9f5",
+                        "on-surface-variant": "#5e605b",
+                        "on-background": "#31332f",
+                        "background": "#fbf9f5",
+                        "inverse-surface": "#0e0e0d",
+                        "primary": "#8a4c5d",
+                        "primary-fixed": "#f3a6b8"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <link href="index.css" rel="stylesheet" />
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#fbf9f5]/80 dark:bg-[#31332f]/80 backdrop-blur-md">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="text-2xl font-headline italic text-primary">The Botanical Gallery</div>
+            <div class="hidden md:flex space-x-8 font-headline font-semibold tracking-wider">
+                <a class="text-primary border-b-2 border-primary pb-1 transition-colors duration-300" href="#">Home</a>
+                <a class="text-on-surface opacity-70 hover:text-primary transition-colors duration-300"
+                    href="#details">Details</a>
+                <a class="text-on-surface opacity-70 hover:text-primary transition-colors duration-300"
+                    href="#map">Map</a>
+                <a class="text-on-surface opacity-70 hover:text-primary transition-colors duration-300"
+                    href="#rsvp">RSVP</a>
+                <a class="text-on-surface opacity-70 hover:text-primary transition-colors duration-300"
+                    href="#indian-wedding">Indian Wedding</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-primary focus:outline-none">
+                <span class="material-symbols-outlined" id="mobile-menu-icon">menu</span>
+            </button>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#fbf9f5] dark:bg-[#31332f] border-t border-outline-variant/20 shadow-lg">
+            <div class="flex flex-col px-8 py-6 space-y-6 font-headline font-semibold tracking-wider text-center flex-grow">
+                <a class="text-primary transition-colors duration-300" href="#">Home</a>
+                <a class="text-on-surface hover:text-primary transition-colors duration-300" href="#details">Details</a>
+                <a class="text-on-surface hover:text-primary transition-colors duration-300" href="#map">Map</a>
+                <a class="text-on-surface hover:text-primary transition-colors duration-300" href="#rsvp">RSVP</a>
+                <a class="text-on-surface hover:text-primary transition-colors duration-300" href="#indian-wedding">Indian Wedding</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-surface">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img class="w-full h-full object-cover" data-alt="Delicate watercolor flowers in shades of rose and sage"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5W7VhnDllCk18w6E_16MCyZXMeFVLHkj8tJz4v4CdI4_bv_kTa3TwgYG2k8x0a9ry1Om3zNDTaH7qCrv0sWtuYqh9wEGX1YZY5yPfD4drrtnHWEVM0hPgy_WwTYtsl8Py4H-0HrFbsSbsM3GMvNH2zk2uXKzJPFjq7ITfJM6cs3MnBxTo4qKlddgmi3G5utY5RPNEubN0B6GB4X_5cPpa_hpKYMhQ0aThU80_Da3kbTgalUgXNl7n9dmMJrUvXb3wIxi6eIqkjw" />
+        </div>
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <div class="mb-6 inline-block">
+                <span class="text-primary font-headline italic text-xl md:text-2xl tracking-widest block mb-2">Save the
+                    Date</span>
+                <div class="h-px w-12 bg-primary mx-auto"></div>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-headline font-bold text-on-surface mb-8 leading-tight">
+                Fanny <span class="text-primary">&amp;</span> Chandan
+            </h1>
+            <p
+                class="text-lg md:text-2xl font-body font-light tracking-[0.2em] uppercase text-on-surface-variant mb-12">
+                16 Mai 2026 • Lozanne, France
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a class="bg-primary text-on-primary px-10 py-4 rounded-full font-medium tracking-wide hover:bg-primary-dim transition-all duration-300 shadow-sm"
+                    href="#rsvp">
+                    Confirmer ma présence
+                </a>
+                <a class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-full font-medium tracking-wide hover:opacity-80 transition-all duration-300"
+                    href="#details">
+                    Découvrir le programme
+                </a>
+            </div>
+        </div>
+        <!-- Decorative Floating Elements -->
+        <div class="absolute -bottom-12 -left-12 w-64 h-64 opacity-40 rotate-12 hidden lg:block">
+            <img class="rounded-full" data-alt="Floral botanical illustration detail"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0bsp1xrtGfpj_GB8xiS40w32zkE_GsvFeoaDpdE6_Ei8X18kLy_afi7kwtBMP3aUiVXU5KX40AzINA5iIN46ttTOrowbUhg9Pl4ANSsCwWLA14BEASh2XNxF_PDAtkhCWadRtTiCTlgOWTkZq9BVgIjIFBTtqHJShuICCot07iiTwPIwo9wOIBAvDG21L-4N9BjWppYolDn43w1eW2KYY93wXGgL98eue2tg_R65mX8EZVsKLjQxBuu0gb4QkwU51QrknU2PEtQ" />
+        </div>
+    </header>
+    <!-- Details Section: Dress Code & Times -->
+    <section class="py-24 px-8 bg-surface-container-low" id="details">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <h2 class="text-4xl md:text-5xl font-headline font-bold mb-8 text-on-surface">Le Programme</h2>
+                    <p class="text-lg text-on-surface-variant leading-relaxed mb-12 max-w-md">
+                        Nous avons hâte de célébrer ce moment unique avec vous. Voici les détails pour organiser votre
+                        journée parmi nous.
+                    </p>
+                    <div class="space-y-12">
+                        <div class="flex gap-6">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 text-on-primary-container">
+                                <span class="material-symbols-outlined">schedule</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-headline font-bold mb-2">La Cérémonie Civile</h3>
+                                <p class="text-on-surface-variant">14:30 — Mairie du 5ème Arrondissement</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div
+                                class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0 text-on-secondary-container">
+                                <span class="material-symbols-outlined">restaurant</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-headline font-bold mb-2">Réception &amp; Dîner</h3>
+                                <p class="text-on-surface-variant">18:00 — Le Jardin des Plantes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-sm border border-outline-variant/10">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="material-symbols-outlined text-primary text-3xl">checkroom</span>
+                        <h2 class="text-3xl font-headline font-bold">Dress Code</h2>
+                    </div>
+                    <div class="prose prose-stone max-w-none text-on-surface-variant">
+                        <p class="text-xl font-headline italic text-primary mb-6">"Élégance Champêtre &amp; Touches de
+                            Rose"</p>
+                        <p class="mb-4">
+                            Pour accompagner l'esprit de cette journée, nous vous invitons à porter des tenues élégantes
+                            aux couleurs douces.
+                        </p>
+                        <ul class="space-y-4 list-none pl-0">
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                                <span>Messieurs : Costume clair, noeud papillon ou cravate aux tons pastels.</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                                <span>Mesdames : Robes fluides, motifs floraux bienvenus.</span>
+                            </li>
+                        </ul>
+                        <div class="mt-8 p-6 bg-surface-container-low rounded-lg italic text-sm">
+                            Note : Une partie de la réception se déroulera sur herbe, prévoyez vos chaussures en
+                            conséquence.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Map Section -->
+    <section class="py-24 bg-surface" id="map">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-headline font-bold mb-4">Se Rendre à l'Événement</h2>
+                <p class="text-on-surface-variant">Deux lieux emblématiques au coeur de Paris</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 h-[500px]">
+                <div class="relative group overflow-hidden rounded-xl bg-surface-container-highest">
+                    <div class="absolute top-6 left-6 z-10 bg-surface/90 backdrop-blur p-4 rounded-lg shadow-sm">
+                        <h4 class="font-headline font-bold">Mairie du 5ème</h4>
+                        <p class="text-xs text-on-surface-variant">21 Place du Panthéon, 75005 Paris</p>
+                    </div>
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                        data-alt="Map location view of Paris Pantheon area" data-location="Paris, France"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNMFW4xUi71ewEXBtp0GuUmu_c0XO4F5iez_KZ5GD3lC0vlCwy56HE2Y2Ao0Ck-xaZrP3Qr3b95gun6QWyIL9sgjTkIguiWxTfqWiANYYE1m8zzLPSIj9O1nv4WDg0xwok5GX2upy9L7v6GRKOrRppdvWIKtvgohxyxgY-MtN8g5mpCoYDH462T9L154PCPySkd1PH1DuVb7A6EXOrXswlntoiVAnXuWxBGAx15POXthfIr7H2v8BxwrGKuWKkexKnChtZbfOy0g" />
+                </div>
+                <div class="relative group overflow-hidden rounded-xl bg-surface-container-highest">
+                    <div class="absolute top-6 left-6 z-10 bg-surface/90 backdrop-blur p-4 rounded-lg shadow-sm">
+                        <h4 class="font-headline font-bold">Le Jardin des Plantes</h4>
+                        <p class="text-xs text-on-surface-variant">57 Rue Cuvier, 75005 Paris</p>
+                    </div>
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                        data-alt="Garden and botanical landscape map location" data-location="Paris, France"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeosPJirC1mr1cYfYuBWJ_HIemD6rABTt5pbU4P1Yu_QlA76xLe5d5ydIxklCOLPG5YSt5p3u1ht8OGmiauKr7-TzmNPFdiSu82DX-1Z8JBpki9aJppa1iKxGTlc3kOZroWTrP8ulTRk9_qi5w0mjhlY5qJXEDGk5W-nwhzRqZ1gsNYyAp-uTA45DUet1Zk8U90rLKqk03KvogXv4r39tAjIa8OfOaGSigE81sEwvGN0oMJWif-k1b2yihEkN1r9Nl5ckxHEa5_g" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- RSVP & Stay Form Section -->
+    <section class="py-24 px-8 bg-surface-container-low relative overflow-hidden" id="rsvp">
+        <div class="max-w-3xl mx-auto relative z-10">
+            <div class="bg-surface-container-lowest p-10 md:p-16 rounded-3xl shadow-sm border border-outline-variant/5">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-headline font-bold mb-4">RSVP &amp; Hébergement</h2>
+                    <p class="text-on-surface-variant">Merci de confirmer votre présence avant le 1er Juillet 2024</p>
+                </div>
+                <form class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-label uppercase tracking-widest text-on-surface-variant ml-1">Nom
+                                &amp; Prénom</label>
+                            <input
+                                class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant/20 focus:ring-0 focus:border-primary transition-all duration-300 py-3 px-4 rounded-t-lg"
+                                placeholder="Ex: Jean Dupont" type="text" />
+                        </div>
+                        <div class="space-y-2">
+                            <label
+                                class="text-sm font-label uppercase tracking-widest text-on-surface-variant ml-1">Email</label>
+                            <input
+                                class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant/20 focus:ring-0 focus:border-primary transition-all duration-300 py-3 px-4 rounded-t-lg"
+                                placeholder="jean@exemple.com" type="email" />
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <label
+                            class="text-sm font-label uppercase tracking-widest text-on-surface-variant block ml-1">Serez-vous
+                            présent ?</label>
+                        <div class="flex gap-6">
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input class="text-primary focus:ring-primary" name="presence" type="radio" />
+                                <span class="group-hover:text-primary transition-colors">Oui, avec plaisir</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer group">
+                                <input class="text-primary focus:ring-primary" name="presence" type="radio" />
+                                <span class="group-hover:text-primary transition-colors">Malheureusement non</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-secondary-container/10 rounded-2xl border border-secondary-container/20">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="material-symbols-outlined text-secondary">hotel</span>
+                            <div>
+                                <h4 class="font-headline font-bold">Besoin d'un hébergement ?</h4>
+                                <p class="text-sm text-on-surface-variant">Nous avons pré-réservé quelques chambres à
+                                    proximité pour nos invités venant de loin.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input class="rounded text-secondary focus:ring-secondary" id="hotel" type="checkbox" />
+                            <label class="text-sm" for="hotel">Je souhaite plus d'informations sur l'hôtel</label>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full bg-primary text-on-primary py-5 rounded-full font-bold text-lg hover:bg-primary-dim transition-all shadow-md transform hover:-translate-y-1"
+                        type="submit">
+                        Envoyer ma réponse
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- Background Watercolor Brush -->
+        <div class="absolute top-0 right-0 w-96 h-96 opacity-10 pointer-events-none">
+            <div class="w-full h-full bg-primary-container rounded-full blur-[100px]"></div>
+        </div>
+    </section>
+    <!-- Cagnotte & Gift Registry -->
+    <section class="py-24 bg-surface">
+        <div class="max-w-4xl mx-auto px-8 text-center">
+            <h2 class="text-4xl font-headline font-bold mb-8">Liste de Mariage</h2>
+            <p class="text-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+                Votre présence est le plus beau des cadeaux. Si vous souhaitez néanmoins contribuer à notre futur foyer
+                ou à notre voyage de noces, une cagnotte en ligne est à votre disposition.
+            </p>
+            <a class="inline-flex items-center gap-3 border-2 border-primary text-primary px-12 py-4 rounded-full font-bold hover:bg-primary hover:text-on-primary transition-all group"
+                href="#">
+                <span class="material-symbols-outlined">card_giftcard</span>
+                Accéder à la Cagnotte
+            </a>
+        </div>
+    </section>
+    <!-- Indian Wedding Teaser Section -->
+    <section class="py-24 bg-surface-container-high overflow-hidden" id="indian-wedding">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative order-2 lg:order-1">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform -rotate-2">
+                        <img class="w-full aspect-[4/5] object-cover"
+                            data-alt="Vibrant Indian wedding colors and patterns teaser"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvdZh2QJWFuOARMKztpYRpFnIBhNSl0oO0M0Zr0ES0dhhhDCmTgD0FMG34XMdeJYbZmY_3X0E2TrmMhQzkzBoBDpAlGBQsT1AVIM3P6X2Wdvnbuf30YW-A7bpuXzSaItjHAe7sCNww_Bbg4DBAbgippZbWkyVFB8m5kPc3yilefsNEgDA2ziti8dnWp42Mp1YafgLs_HeZ3qiGuYEUFYh7b2XiEvWTIUIamQfbqX5rFJyw64JNiiVwF88FmKIGr3mW1QA8U06tFQ" />
+                    </div>
+                    <div
+                        class="absolute -top-10 -right-10 w-48 h-48 bg-primary-container rounded-full opacity-30 blur-3xl">
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <span class="text-primary font-headline italic text-xl block mb-4">À suivre...</span>
+                    <h2 class="text-4xl md:text-6xl font-headline font-bold mb-8 leading-tight">La Célébration Indienne
+                        à Udaipur</h2>
+                    <p class="text-lg text-on-surface-variant leading-relaxed mb-8">
+                        Le voyage ne s'arrête pas là. En Janvier 2025, nous nous envolerons pour le Rajasthan pour
+                        honorer les racines d'Arjun lors d'une célébration traditionnelle de trois jours.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-on-surface">
+                            <span class="material-symbols-outlined text-primary">auto_awesome</span>
+                            <span>Cérémonie Mehendi &amp; Sangeet</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-on-surface">
+                            <span class="material-symbols-outlined text-primary">temple_hindu</span>
+                            <span>Célébration au bord du Lac Pichola</span>
+                        </div>
+                    </div>
+                    <div class="mt-12">
+                        <p class="font-headline font-bold text-primary italic">Plus d'informations à venir à l'automne.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-surface-container-low dark:bg-[#1a1c18] w-full py-12 px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 max-w-7xl mx-auto">
+            <div class="text-lg font-headline text-primary">The Botanical Gallery</div>
+            <div class="flex flex-wrap justify-center gap-8 font-label text-sm tracking-[0.05rem]">
+                <a class="text-on-surface hover:opacity-80 transition-opacity" href="#">Accueil</a>
+                <a class="text-on-surface hover:opacity-80 transition-opacity font-bold text-primary"
+                    href="#rsvp">Cagnotte</a>
+                <a class="text-on-surface hover:opacity-80 transition-opacity" href="#">Contact</a>
+            </div>
+            <p class="text-on-surface-variant opacity-70 font-label text-sm tracking-[0.05rem]">
+                © 2024 The Botanical Gallery
+            </p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+            if (mobileMenuBtn && mobileMenu && mobileMenuIcon) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenuIcon.textContent = 'menu';
+                    } else {
+                        mobileMenuIcon.textContent = 'close';
+                    }
+                });
+
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuIcon.textContent = 'menu';
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
